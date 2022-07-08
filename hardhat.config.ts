@@ -3,6 +3,10 @@ import "@nomiclabs/hardhat-etherscan";
 
 import {privateKey} from "./private_key"
 
+import "./tasks/stake";
+import "./tasks/unstake";
+import "./tasks/claim";
+
 export default {
   solidity: "0.8.15",
   networks: {
