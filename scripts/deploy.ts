@@ -1,14 +1,11 @@
 import { ethers } from "hardhat";
 
 async function main() {
-    const Token = await ethers.getContractFactory("ERC20Token");
-    const token = await Token.deploy("LPToken", "TEST");
-  
-    let [owner, ...addrs] = await ethers.getSigners();
+    const Contract = await ethers.getContractFactory("StakeContract");
+    const contract = await Contract.deploy("0x91FC93074C87B21a2d33B2c7D89b52De4Ac6241a", "0x891856492afc1fa9d548b8f7F72140bFaFaD4B28");
 
-    await token.deployed();
-    await token.mint(owner.address, 10 * 10 ** 8);
-    console.log("Token address:", token.address);
+    await contract.deployed();
+    console.log("Contract address:", contract.address);
   }
   
   main()

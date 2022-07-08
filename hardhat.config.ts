@@ -6,6 +6,7 @@ import {privateKey} from "./private_key"
 import "./tasks/stake";
 import "./tasks/unstake";
 import "./tasks/claim";
+import "./tasks/addRewards";
 
 export default {
   solidity: "0.8.15",

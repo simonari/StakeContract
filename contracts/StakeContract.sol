@@ -30,7 +30,7 @@ contract StakeContract {
     }
 
 
-    constructor(IERC20 _rewardsToken, IERC20 _stakesToken) {
+    constructor(IERC20 _stakesToken, IERC20 _rewardsToken) {
         owner = msg.sender;
         rewardsToken = _rewardsToken;
         stakesToken = _stakesToken;
@@ -82,6 +82,10 @@ contract StakeContract {
         addRewards();
         
         uint256 rewards = stakers[msg.sender].unclaimedRewards;
+
+        if (rewards >= _rewardsSupply) {
+            rewards = _rewardsSupply;
+        }
 
         _rewardsSupply -= rewards;
 
