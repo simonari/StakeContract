@@ -1,0 +1,8 @@
+# dirs
+.vscode/
+node_modules/
+artifacts/
+cache/
+
+# files
+private_key.ts
